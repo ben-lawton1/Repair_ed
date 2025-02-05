@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before vs After gallery1 with Dropdowns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dropdown {
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .dropdown-header {
+            padding: 15px;
+            background-color: #0078D7;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-header:hover {
+            background-color: #005fa3;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .gallery1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery1-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            transform: scale(0.9);
+        }
+
+        .gallery1-item:hover {
+            transform: scale(1);
+        }
+
+        .gallery1-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery1-item img.before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+
+        .gallery1-item img.after {
+            opacity: 0;
+        }
+
+        .gallery1-item:hover img.before {
+            opacity: 0;
+        }
+
+        .gallery1-item:hover img.after {
+            opacity: 1;
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .gallery1-item:hover .caption {
+            content: "After";
+            color: #555;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .load-more {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .load-more button {
+            background-color: #0078D7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .load-more button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const dropdownHeaders = document.querySelectorAll(".dropdown-header");
+
+            dropdownHeaders.forEach(header => {
+                header.addEventListener("click", () => {
+                    const dropdownContent = header.nextElementSibling;
+
+                    // Toggle visibility
+                    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+                });
+            });
+
+            const loadMoreButtons = document.querySelectorAll(".load-more button");
+
+            loadMoreButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const hiddenItems = button.parentElement.previousElementSibling.querySelectorAll(".hidden");
+                    hiddenItems.forEach(item => item.classList.remove("hidden"));
+                    button.style.display = "none"; // Hide the button after clicking
+                });
+            });
+
+            const gallery1Items = document.querySelectorAll(".gallery1-item");
+            gallery1Items.forEach(item => {
+                const caption = item.querySelector(".caption");
+                item.addEventListener("mouseover", () => {
+                    caption.textContent = "After";
+                });
+                item.addEventListener("mouseout", () => {
+                    caption.textContent = "Before";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Before vs After gallery1</h1>
+
+    <div class="dropdown">
+        <div class="dropdown-header">
+            gallery1 1 <span>&#x25BC;</span>
+        </div>
+        <div class="dropdown-content">
+            <div class="gallery1">
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item hidden">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item hidden">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+            </div>
+            <div class="load-more">
+                <button>Load More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <div class="dropdown-header">
+            gallery1 2 <span>&#x25BC;</span>
+        </div>
+        <div class="dropdown-content">
+            <div class="gallery1">
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item hidden">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item hidden">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+            </div>
+            <div class="load-more">
+                <button>Load More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <div class="dropdown-header">
+            gallery1 3 <span>&#x25BC;</span>
+        </div>
+        <div class="dropdown-content">
+            <div class="gallery1">
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item hidden">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+                <div class="gallery1-item hidden">
+                    <img src="images.png" alt="Before" class="before">
+                    <img src="placeholder.png" alt="After" class="after">
+                    <div class="caption">Before</div>
+                </div>
+            </div>
+            <div class="load-more">
+                <button>Load More</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
