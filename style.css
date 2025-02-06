@@ -257,46 +257,74 @@ header .navbar {
   color: var(--secondary-color);
 }
 
-/* services section styling */
+/* Services section styling */
 .services-section {
   color: var(--white-color);
   background: var(--medium-gray-color);
   padding: 50px 0 100px;
+  text-align: center;
 }
 
 .services-section .services-list {
   display: flex;
-  gap: 110px;
+  gap: 40px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
 }
 
 .services-section .services-list .services-item {
   display: flex;
-  text-align: center;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: calc(100% / 3 - 110px);
+  justify-content: center;
+  width: calc(100% / 3 - 40px);
+  text-align: center;
+  background: var(--dark-gray-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
-.services-section .services-list .services-item .services-image {
-  width: 83%;
-  aspect-ratio: 1;
-  margin-bottom: 15px;
-  object-fit: contain;
+.services-section .services-list .services-item:hover {
+  transform: translateY(-5px);
 }
 
-.services-section .services-list .services-item .name {
-  margin: 12px 0;
-  font-size: var(--font-size-l);
+.services-box {
+  position: relative;
+  width: 100%;
+  background-color: var(--dark-gray-color)
+}
+
+.services-box .name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 8px 12px;
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.services-box .services-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(70%);
 }
 
 .services-section .services-list .services-item .text {
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
+  margin-top: 15px;
 }
+
 
 .dropdown {
   margin: 20px;
@@ -328,7 +356,24 @@ header .navbar {
   border-top: 1px solid #ccc;
 }
 
-/*test gallery section*/
+/* Mobile View - No hover, instead apply breathing animation */
+@media (max-width: 768px) {
+  .services-section .services-list .services-item {
+    width: calc(100% - 40px); /* Full width with breathing space */
+    animation: breathe 1.5s infinite ease-in-out;
+  }
+
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.01);
+    }
+  }
+}
+
+/* test gallery section
 .gallery1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -409,7 +454,7 @@ header .navbar {
 
 .load-more button:hover {
   background-color: #a70000;
-}
+} */
 
 
 /* Testimonials section styling */
@@ -418,14 +463,23 @@ header .navbar {
   background: var(--white-color);
 }
 
+.testimonials-section .section-title {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+}
+
+.testimonials-section .section-content {
+  height: 400px;
+}
+
 .testimonials-section .slider-wrapper {
   overflow: hidden;
-  margin: 0 60px 50px;
+  margin: 0 auto;
 }
 
 .testimonials-section .testimonial {
   user-select: none;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -475,16 +529,6 @@ header .navbar {
 }
 
 
-/* Gallery section styling */
-.gallery-section {
-  padding: 50px 0 100px;
-  background-color: var(--medium-gray-color);
-  color: white;
-}
-
-.gallery-header {
-  margin-left: 20px
-}
 
 
 /* Contact section styling */
