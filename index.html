@@ -65,12 +65,56 @@
       <!-- About section -->
       <section class="about-section" id="about">
         <div class="section-content">
-          <div class="about-image-wrapper">
+          <!-- <div class="about-image-wrapper">
             <img src="images/download.png" alt="About" class="about-image" />
-          </div>
+          </div> -->
           <div class="about-details">
             <h2 class="section-title">About Us</h2>
-            <p class="text">Details about the business and whatnot Details about the business and whatnot Details about the business and whatnot Details about the business and whatnot </p>
+
+            <!--content-->
+            <h2>Experienced Handyman & General Contractor</h2>
+
+            <p class="text" id="aboutMain"></p>
+            <h3 class="subhead">Unmatched Expertise Across Multiple Trades</h3>
+            <ul class="about-services-list">
+              <li class="about-list-elements">Electrical</li>
+              <li class="about-list-elements">Plumbing</li>
+              <li class="about-list-elements">Carpentry</li>
+              <li class="about-list-elements">Tiling & Flooring</li>
+              <li class="about-list-elements">Drywall</li>
+              <li class="about-list-elements">Full-scale Renovations</li>
+              <li class="about-list-elements">. . .</li>
+            </ul>
+
+            <button class="loadMore" onClick="toggleContent()">Load More</button>
+
+            <div id="extraContent">
+              <h3 class="subhead">Commitment to Quality and Attention to Detail</h3>
+              <p class="text">Quality is at the core of everything I do. I understand that your home is your most significant investment, and I treat it with the care and respect it deserves. From precise measurements to flawless finishes, my meticulous attention to detail ensures that every aspect of your project meets the highest standards.</p>
+              
+              <h3 class="subhead">Customer Satisfaction is My Passion</h3>
+              <p class="text">I transitioned from a successful corporate IT career to pursue my true passion for building and fixing things. My goal is not just to meet your expectations but to exceed them. I listen carefully to your needs, provide transparent communication, and ensure that you’re thrilled with the final result.</p>
+              
+              <h3 class="subhead">A Strong Foundation in Engineering and Business</h3>
+              <p class="text">My educational background includes a Bachelor’s Degree in Engineering and a Master’s in Business. This unique combination allows me to approach projects with a problem-solving mindset and a focus on efficiency and cost-effectiveness. I’m adept at finding innovative solutions and managing projects smoothly from start to finish.</p>
+              
+              <h3 class="subhead">Trusted by Homeowners for Over 30 Years</h3>
+              <p class="text">For three decades, I’ve been helping homeowners transform their spaces into functional, beautiful, and safe environments. Whether it’s a small repair or a major renovation, I’ve built a reputation for reliability, professionalism, and outstanding workmanship.</p>
+              
+              <h3 class="subhead">Services Offered</h3>
+              <ul class="about-services-list">
+                  <li class="about-list-elements"><strong>Renovations:</strong> Transform your home into the perfect space with expert home renovation services, specializing in kitchen, bathroom, and family room remodels.</li>
+                  <li class="about-list-elements"><strong>Carpentry:</strong> Deck building, exterior wood trim, and treehouse construction.</li>
+                  <li class="about-list-elements"><strong>Flooring & Tiling:</strong> Ceramic tiles, wood flooring, LVP installation, and staircase renovations.</li>
+                  <li class="about-list-elements"><strong>Electrical:</strong> New socket installations, switch repairs, dimmer/timer installations, smoke detector installations, ceiling/outdoor light installations, and TV mounting.</li>
+                  <li class="about-list-elements"><strong>Minor Plumbing:</strong> Faucet replacements, plumbing leak repairs, vanity installations, Toilet repair or replacement, dishwasher Installation, and disposal repair/replacement.</li>
+                  <li class="about-list-elements"><strong>Interior Management:</strong> Door replacements, handle/hinge/lock upgrades, shelf installations, picture hanging, ceiling fan installations, drywall repair, and ADA installations.</li>
+              </ul>              
+
+
+            </div>
+            
+            
             <div class="social-link-list">
               <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
               <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
@@ -85,88 +129,55 @@
         <h2 class="section-title">Our Work</h2>
         <div class="section-content">
           <ul class="services-list">
-            <li class="services-item">
-              <div class="services-box">
-                <h3 class="name">Full Scale Renovations</h3>
-                <img src="images/download.png" alt="Thing 1" class="services-image" />
-              </div>
-              <p class="text" id="renovationDescription"></p>
-            </li>
-            <li class="services-item">
-              <div class="services-box">
-                <h3 class="name">Carpentry</h3>
-                <img src="images/download.png" alt="Thing 2" class="services-image" />
-              </div>
-              <p class="text"  id="carpentryDescription"></p>
-            </li>
-            <li class="services-item">
-              <div class="services-box">
-                <h3 class="name">Flooring & Tiling</h3>
-                <img src="images/download.png" alt="Thing 3" class="services-image" />
-              </div>
-              <p class="text"  id="floorTileDescription"></p>
-            </li>
-            <li class="services-item">
-              <div class="services-box">
-                <h3 class="name">Electrical</h3>
-                <img src="images/download.png" alt="Thing 4" class="services-image" />
-              </div>
-              <p class="text"  id="electricalDescription"></p>
-            </li>
-            <li class="services-item">
-              <div class="services-box">
-                <h3 class="name">Plumbing</h3>
-                <img src="images/download.png" alt="Thing 5" class="services-image" />
-              </div>
-              <p class="text"  id="plumbingDescription"></p>
-            </li>
-            <li class="services-item">
-              <div class="services-box">
-                <h3 class="name">Drywall</h3>
-                <img src="images/download.png" alt="Thing 6" class="services-image" />
-              </div>
-              <p class="text" id="drywallDescription"></p>
-            </li>
 
-            <h1>temp - actual galleries that could have pics....................................................</h1><p></p>
             <li class="services-item">
+              <a href="galleries/drywallGallery.html">
               <div class="services-box">
                 <h3 class="name">Drywall & Flooring</h3>
-                <img src="images/download.png" alt="Thing 6" class="services-image" />
+                <img src="work/drywall/1(5).jpg" alt="Thing 6" class="services-image" />
               </div>
               <p class="text" ></p>
+              </a>
             </li>
 
             <li class="services-item">
+              <a href="galleries/bathroomGallery.html">
               <div class="services-box">
                 <h3 class="name">Bathroom</h3>
-                <img src="images/download.png" alt="Thing 6" class="services-image" />
+                <img src="work/bathroom/2(10).jpg" alt="Thing 6" class="services-image" />
               </div>
               <p class="text" ></p>
+              </a>
             </li>
 
             <li class="services-item">
+              <a href="galleries/kitchenGallery.html">
               <div class="services-box">
                 <h3 class="name">Kitchen</h3>
-                <img src="images/download.png" alt="Thing 6" class="services-image" />
+                <img src="work/kitchen/3(3).jpg" alt="Thing 6" class="services-image" />
               </div>
               <p class="text" ></p>
+              </a>
             </li>
 
             <li class="services-item">
+              <a href="galleries/carpentryGallery.html">
               <div class="services-box">
                 <h3 class="name">Carpentry</h3>
-                <img src="images/download.png" alt="Thing 6" class="services-image" />
+                <img src="work/carpentry/2.jpg" alt="Thing 6" class="services-image" />
               </div>
               <p class="text" ></p>
+              </a>
             </li>
 
             <li class="services-item">
+              <a href="galleries/otherGallery.html">
               <div class="services-box">
                 <h3 class="name">Other</h3>
-                <img src="images/download.png" alt="Thing 6" class="services-image" />
+                <img src="work/other/5(1).jpg" alt="Thing 6" class="services-image" />
               </div>
               <p class="text" ></p>
+              </a>
             </li>
 
           </ul>

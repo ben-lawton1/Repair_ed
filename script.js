@@ -47,3 +47,18 @@ let swiper = new Swiper(".slider-wrapper", {
     },
   },
 });
+
+//Load more About Section
+
+function toggleContent() {
+  console.log("TEST");
+  
+  var extraContent = document.getElementById("extraContent");
+  var button = document.querySelector(".loadMore");
+
+  if (extraContent.style.display === "none" || extraContent.style.display === "") {
+      extraContent.style.display = "block";
+      button.style.display = "none";
+  }
+}
+
