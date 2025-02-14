@@ -1,5 +1,5 @@
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery</title>
@@ -7,71 +7,146 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <!-- Linking Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures full viewport height */
+            margin: 0;
+        }
+
+        main {
+            flex: 1; 
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f8f8;
+        }
+
+        /* Responsive Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Individual Gallery Item */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        /* Image Styling */
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Lightbox Styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain; /* Ensures image maintains aspect ratio */
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+</head>
+<body>
     <!-- Header / Navbar -->
     <header>
-      <nav class="navbar">
-        <a href="#" class="nav-logo">
-          <h2 class="logo-text">RepairEd</h2>
-        </a>
-
-        <ul class="nav-menu">
-          <button id="services-close-button" class="fas fa-times"></button>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#services" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#testimonials" class="nav-link">Testimonials</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
-
-        <button id="services-open-button" class="fas fa-bars"></button>
-      </nav>
+        <nav class="navbar">
+            <a href="../index.html" class="nav-logo">
+                <h2 class="logo-text">RepairEd</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="services-close-button" class="fas fa-times"></button>
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#services" class="nav-link">Work</a></li>
+                <li class="nav-item"><a href="../index.html#testimonials" class="nav-link">Testimonials</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button id="services-open-button" class="fas fa-bars"></button>
+        </nav>
     </header>
 
     <!-- Main section: Gallery -->
     <main>
-        <br><br><br><br><br><br><br><br>
         <section class="gallery-section">
-          <h2 class="section-title">Gallery</h2>
-          <div class="gallery-content">
-            <div id="gallery-grid" class="gallery-grid">
-              <!-- Dynamically added images will appear here -->
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-content">
+                <div id="gallery-grid" class="gallery-grid">
+                    <!-- Dynamically added images will appear here -->
+                </div>
             </div>
-          </div>
         </section>
-      </main>
+    </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Image">
+    </div>
 
     <!-- Footer section -->
     <footer class="footer-section">
-      <div class="section-content">
-        <p class="copyright-text">© 2024 Website</p>
-
-        <div class="social-link-list">
-          <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+        <div class="section-content">
+            <p class="copyright-text">© 2024 Website</p>
+            <div class="social-link-list">
+                <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <p class="policy-text">
+                <a href="#" class="policy-link">Privacy policy</a>
+                <span class="separator">•</span>
+                <a href="#" class="policy-link">Refund policy</a>
+            </p>
         </div>
-
-        <p class="policy-text">
-          <a href="#" class="policy-link">Privacy policy</a>
-          <span class="separator">•</span>
-          <a href="#" class="policy-link">Refund policy</a>
-        </p>
-      </div>
     </footer>
 
     <!-- Linking Swiper script -->
@@ -81,24 +156,47 @@
     <script src="script.js"></script>
 
     <script>
-
-        fetch('images.json') // Load JSON data from local or hosted file
+        // Load images from images.json
+        fetch('../work/carpentry/carpentry.json')
         .then(response => response.json())
-        .then(images => {
-          const galleryGrid = document.getElementById('gallery-grid');
-          images.forEach(image => {
-            const imageDiv = document.createElement('div');
-            imageDiv.classList.add('gallery-item');
-            const imgElement = document.createElement('img');
-            imgElement.src = `./work/bathroom/${image}`; // Use relative path to images
-            imgElement.alt = `Gallery Image ${image}`;
-            imgElement.classList.add('gallery-image');
-            imageDiv.appendChild(imgElement);
-            galleryGrid.appendChild(imageDiv);
-          });
+        .then(data => {
+            const galleryGrid = document.getElementById('gallery-grid');
+            data.images.forEach(image => {
+                addImageToGallery(`../work/carpentry/${image}`);
+            });
         })
         .catch(err => console.error('Error loading images:', err));
 
+        // Function to add image to gallery
+        function addImageToGallery(src) {
+            const galleryGrid = document.getElementById('gallery-grid');
+            const imageDiv = document.createElement('div');
+            imageDiv.classList.add('gallery-item');
+
+            const imgElement = document.createElement('img');
+            imgElement.src = src;
+            imgElement.alt = "Uploaded Image";
+            imgElement.classList.add('gallery-image');
+            
+            // Open lightbox when image is clicked
+            imgElement.addEventListener('click', () => openLightbox(src));
+
+            imageDiv.appendChild(imgElement);
+            galleryGrid.appendChild(imageDiv);
+        }
+
+        // Lightbox functionality
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        // Close the lightbox
+        document.querySelector('.lightbox-close').addEventListener('click', () => {
+            document.getElementById('lightbox').style.display = 'none';
+        });
     </script>
-  </body>
+</body>
 </html>
