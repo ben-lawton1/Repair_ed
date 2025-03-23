@@ -127,6 +127,16 @@ header .navbar {
   background: var(--secondary-color);
 }
 
+#phone-link {
+  background-color: var(--secondary-color);
+}
+
+#phone-link:hover {
+  background-color: transparent;
+  border: 2px solid red; /* Add red border */
+  color: red;
+}
+
 .navbar :where(#services-open-button, #services-close-button) {
   display: none;
 }
@@ -205,8 +215,6 @@ header .navbar {
   margin-right: 30px;
 }
 
-
-/* About section styling */
 /* About section styling */
 .about-section {
   padding: 120px 0;
@@ -221,14 +229,6 @@ header .navbar {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-/* .about-section .about-image-wrapper .about-image {
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
-  border-radius: var(--border-radius-circle);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-} */
 
 .about-section .about-details {
   max-width: 100%;
@@ -375,7 +375,6 @@ header .navbar {
   margin-top: 15px;
 }
 
-
 .dropdown {
   margin: 20px;
   border: 1px solid #ccc;
@@ -424,8 +423,6 @@ header .navbar {
   }
 } */
 
-
-
 /* Testimonials section styling */
 .testimonials-section {
   padding: 50px 0 100px;
@@ -471,10 +468,12 @@ header .navbar {
 
 .testimonials-section .testimonial .feedback {
   line-height: 20px;
+  font-size: 12;
 }
 
 .testimonials-section .swiper-pagination-bullet {
-  margin-top: 20px;
+  margin-top: 20px; /* Increased margin to move bullets down */
+
   width: 15px;
   height: 15px;
   opacity: 1;
@@ -497,9 +496,6 @@ header .navbar {
   margin: 0; /* Removes default margin */
   display: flex; /* Ensures swiper works correctly */
 }
-
-
-
 
 /* Contact section styling */
 .contact-section {
@@ -613,7 +609,6 @@ header .navbar {
   .services-section .services-list .services-item {
     width: calc(100% / 3 - 60px);
   }
-
 }
 
 /* Responsive media query code for max width 900px */
@@ -643,7 +638,6 @@ header .navbar {
 
   .navbar :is(#services-open-button, #services-close-button) {
     font-size: var(--font-size-l);
-
     display: block;
   }
 
@@ -751,7 +745,6 @@ header .navbar {
 
 /* Responsive media query code for max width 640px */
 @media screen and (max-width: 640px) {
-
   .services-section .services-list .services-item,
   .gallery-section .gallery-list .gallery-item {
     width: 100%;
@@ -774,4 +767,3 @@ header .navbar {
     gap: 20px;
   }
 }
-
