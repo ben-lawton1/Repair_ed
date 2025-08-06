@@ -62,3 +62,8 @@ function toggleContent() {
   }
 }
 
+//alert message for email form
+function handleSubmit(event) {
+  alert("Thank you! Your message has been sent.");
+  // The form will still submit after this alert
+}
